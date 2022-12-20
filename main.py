@@ -6,11 +6,11 @@ import requests
 from google.cloud import storage
 from werkzeug.utils import secure_filename
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'cts01-psenapati-2e6bb52d5e77.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/path/to/key.json'
 
 EXPIRATION = datetime.timedelta(hours=60)
 FILE_TYPE = 'application/pdf'
-BUCKET = 'cts01-psenapati'
+BUCKET = 'BUCKET_NAME'
 
 def upload_via_signed(bucket_name, blob_name, filename, expiration, file_type):
     storage_client = storage.Client()
