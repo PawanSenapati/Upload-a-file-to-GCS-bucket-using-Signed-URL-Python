@@ -45,6 +45,7 @@ def upload_file():
         print(diag)
 
         upload_via_signed(BUCKET, 'diag', diag, EXPIRATION, FILE_TYPE)
+        os.remove(filename_1)
 
         return "done"
     
